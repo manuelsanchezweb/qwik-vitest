@@ -1,8 +1,8 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
 
 export const HexaToRGBConverter = component$(() => {
-  const hexaColor = useSignal('#000000')
-  const rgbColor = useSignal('rgb(0, 0, 0)')
+  const hexaColor = useSignal('#ffce00')
+  const rgbColor = useSignal('rgb(255, 206, 0)')
 
   const transformHexaIntoRGB = $(() => {
     const sanitizedHexaColor = hexaColor.value.replace('#', '')
@@ -19,6 +19,7 @@ export const HexaToRGBConverter = component$(() => {
       <h1 class="text-4xl">Hexa To RGB Converter</h1>
       <div class="flex flex-col gap-2 items-start my-4">
         <input
+          name="inputHex"
           value={hexaColor.value}
           onChange$={(e) => (hexaColor.value = e.target.value)}
           data-test="inputHex"

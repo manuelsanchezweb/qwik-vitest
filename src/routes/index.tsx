@@ -2,6 +2,7 @@ import { component$, useSignal } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { Calculator } from '~/components/calculator/calculator'
 import { HexaToRGBConverter } from '~/components/hexa-to-rgb-converter/hexa-to-rgb-converter'
+import { SecretCode } from '~/components/secret-code/secret-code'
 import { Navigation } from '~/layout/navigation'
 
 export const ELEMENTS = {
@@ -11,7 +12,7 @@ export const ELEMENTS = {
 }
 
 export default component$(() => {
-  const selectedElement = useSignal(ELEMENTS.HEXA_RGB_CONVERTER)
+  const selectedElement = useSignal(ELEMENTS.SECRET_CODE)
   return (
     <>
       <Navigation selectedElement={selectedElement} />
@@ -19,7 +20,7 @@ export default component$(() => {
       {selectedElement.value === ELEMENTS.HEXA_RGB_CONVERTER && (
         <HexaToRGBConverter />
       )}
-      {selectedElement.value === ELEMENTS.SECRET_CODE && <p>Secret Code</p>}
+      {selectedElement.value === ELEMENTS.SECRET_CODE && <SecretCode />}
     </>
   )
 })
