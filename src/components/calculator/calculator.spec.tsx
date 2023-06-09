@@ -133,6 +133,4 @@ describe('Calculator', () => {
         
         expect(input?.value).toBe('4')
     })
-
-
 })
