@@ -1,5 +1,5 @@
 import { createDOM } from '@builder.io/qwik/testing'
-import { describe, expect, test, it, vi, beforeAll } from 'vitest'
+import { describe, expect, test, it } from 'vitest'
 import { Calculator, numbers, operations } from './calculator';
 
 // beforeAll(() => {

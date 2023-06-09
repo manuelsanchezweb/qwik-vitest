@@ -21,3 +21,36 @@ Tenemos un montón de scripts en el `package.json` para probar el testing de qwi
 - `npm i`
 - `npm run dev`
 - `npm run test.unit`
+
+## Métodos de los tests con vitest
+
+Vamos a estar utilizando una serie de métodos de `@builder.io/qwik/testing` y de `vitest` para poder hacer unit testing con Qwik. Con el primero, vamos a crear un DOM artificial en el que renderizar nuestros componentes gracias al `render` o simular el document gracias a `screen`, y con vitest vamos a estar utilizando los siguientes métodos:
+
+- **describe**: inicia una colección o agrupación de tests. Por ejemplo, podemos empezar todos los tests referentes a un componente con un describe.
+
+- **test**: inicia el test que será revisado. También puedes utilizar como alias las palabras `bench` o `it`.
+
+- **expect**: aquí es dónde escribiremos cuál es el resultado que esperamos de nuestro test.
+
+Veamos un ejemplo:
+
+```tsx
+describe('Calculator', () => {
+
+    test("should render the calculator", async () => {
+        const { render } = await createDOM();
+        await render(<Calculator />);
+    });
+
+    test("should render the calculator with word Calculator inside", async () => {
+        const { screen, render } = await createDOM();
+        await render(<Calculator />);
+        const calculator = screen.querySelector('.calculator') as HTMLElement;
+        expect(calculator.outerHTML).toContain('Calculator');
+    });
+}
+```
+
+Una cosa característica de Qwik con respecto a hacer testing con React por ejemplo, es que aquí utilizamos `async` en la declaración del test y `await` más tarde en determinadas funciones, como `render`.
+
+Para más información, échale un vistazo a la documentación de [vitest](https://vitest.dev/guide/).
