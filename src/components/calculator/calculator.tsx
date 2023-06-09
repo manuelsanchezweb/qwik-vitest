@@ -16,8 +16,8 @@ export const Calculator = component$(() => {
   })
 
   return (
-    <section class="calculator">
-      <h1>Calculator</h1>
+    <section class="calculator border shadow pt-8 px-4 pb-4">
+      <h1 class="mb-4 text-2xl font-bold">Calculator Casio</h1>
       <input
         value={currentValue.value}
         readOnly
@@ -25,6 +25,7 @@ export const Calculator = component$(() => {
         type="text"
         name="number"
         id="number"
+        class="border my-2 w-full p-2"
       />
       <div role="grid">
         {rows.map((row, index) => (
@@ -35,6 +36,7 @@ export const Calculator = component$(() => {
                 onClick$={() => createHandleClick(number)}
                 key={number}
                 role="gridcell"
+                class="border p-2 min-w-[50px] hover:bg-gray-200 focus:bg-gray-200"
               >
                 {number}
               </button>
@@ -47,11 +49,13 @@ export const Calculator = component$(() => {
             onClick$={() => createHandleClick(operation)}
             key={operation}
             role="gridcell"
+            class="border p-2 min-w-[50px] hover:bg-gray-200 focus:bg-gray-200"
           >
             {operation}
           </button>
         ))}
         <button
+          class="border p-2 min-w-[50px] hover:bg-gray-200 focus:bg-gray-200"
           data-testid={`operation=`}
           onClick$={() =>
             (currentValue.value = evaluate(currentValue.value).toString())

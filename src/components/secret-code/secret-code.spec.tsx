@@ -3,7 +3,7 @@ import { describe, test } from 'vitest'
 import { SecretCode } from './secret-code';
 
 
-describe('Calculator', () => {
+describe('Secret Code', () => {
 
     test("should render the secret code element", async () => {
         const { render } = await createDOM();
