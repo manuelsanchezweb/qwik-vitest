@@ -25,17 +25,17 @@ describe('Calendar', () => {
     });
 
     test('should return the correct number of days in the month for a given date', () => {
-    // Test case 1: February in a non-leap year
-    const februaryDate = new Date('2023-02-10'); // February 10, 2023
-    expect(getNumDaysInMonth(februaryDate)).toEqual(28);
+        // Test case 1: February in a non-leap year
+        const februaryDate = new Date('2023-02-10'); // February 10, 2023
+        expect(getNumDaysInMonth(februaryDate)).toEqual(28);
 
-    // Test case 2: April
-    const aprilDate = new Date('2023-04-01'); // April 1, 2023
-    expect(getNumDaysInMonth(aprilDate)).toEqual(30);
+        // Test case 2: April
+        const aprilDate = new Date('2023-04-01'); // April 1, 2023
+        expect(getNumDaysInMonth(aprilDate)).toEqual(30);
 
-    // Test case 3: December
-    const decemberDate = new Date('2023-12-15'); // December 15, 2023
-    expect(getNumDaysInMonth(decemberDate)).toEqual(31);
+        // Test case 3: December
+        const decemberDate = new Date('2023-12-15'); // December 15, 2023
+        expect(getNumDaysInMonth(decemberDate)).toEqual(31);
     });
 
     test('should return the correct number of days in the last month for a given month and year', () => {
@@ -54,17 +54,17 @@ describe('Calendar', () => {
         // Test case 4: February in a leap year
         const leapYear = 2024;
         expect(getDaysInLastMonth(2, leapYear)).toEqual(29);
-      });
+    });
 
     test('should return the correct month name and year for a given month and year', () => {
-    // Test case 1: January 2023
-    expect(getMonthName(0, 2023)).toEqual('January 2023');
+        // Test case 1: January 2023
+        expect(getMonthName(0, 2023)).toEqual('January 2023');
 
-    // Test case 2: May 2022
-    expect(getMonthName(4, 2022)).toEqual('May 2022');
+        // Test case 2: May 2022
+        expect(getMonthName(4, 2022)).toEqual('May 2022');
 
-    // Test case 3: December 2024
-    expect(getMonthName(11, 2024)).toEqual('December 2024');
+        // Test case 3: December 2024
+        expect(getMonthName(11, 2024)).toEqual('December 2024');
     });
     
 })

@@ -13,7 +13,7 @@ Como ya sabéis, la idea es escribir los unit test antes/mientras estás haciend
 - ➕ [Calculadora](/src/components/calculator/calculator.spec.tsx)
 - 🖍️ [Hexa to RGB Converter - In Progress](/src/components/hexa-to-rgb-converter/hexa-to-rgb-converter.spec.tsx)
 - 🕵️‍♂️ [Secret Code](/src/components/secret-code/secret-code.spec.tsx)
-- 📅 [Calendary](/src/components/calendar/calendar.spec.tsx)
+- 📅 [Calendar](/src/components/calendar/calendar.spec.tsx)
 
 ## Usar el test environment
 
