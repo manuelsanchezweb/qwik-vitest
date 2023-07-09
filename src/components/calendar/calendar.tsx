@@ -48,13 +48,7 @@ export function getDaysInLastMonth(month: number, year: number): number {
  */
 export function getMonthName(month: number, year: number) {
   const date = new Date(year, month)
-  const formattedMonth = date.getMonth() + 1
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    year: 'numeric',
-  })
-    .format(date)
-    .replace(formattedMonth.toString(), '')
+  return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date)
 }
 
 /**
@@ -125,7 +119,7 @@ export function getDaysOfNextMonth(
   while (calendar.length % 7 !== 0) {
     calendar.push({
       day: nextMonthDay++,
-      month: month + 1,
+      month: month === 11 ? 0 : month + 1,
       year: month === 11 ? year + 1 : year,
       disabled: true,
     })
